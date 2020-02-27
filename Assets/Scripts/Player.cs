@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    private Vector2 targetPos;
+    // Global variables always start with '_'
+    private Vector2 _targetPos;
 
     [SerializeField]
-    private float yVal;
+    private float _yVal; // amount to move up or down
+
+    [SerializeField]
+    private float _maxHeight;
+
+    [SerializeField]
+    private float _minHeight;
+
+    [SerializeField]
+    private float _speed; // movement speed
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y != 4)
+        transform.position = Vector2.MoveTowards(transform.position, _targetPos, _speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y != _maxHeight)
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y + yVal);
-            transform.position = targetPos;
+            _targetPos = new Vector2(transform.position.x, transform.position.y + _yVal);
+            // transform.position = targetPos;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y != -4)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y != _minHeight)
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y - yVal);
-            transform.position = targetPos;
+            _targetPos = new Vector2(transform.position.x, transform.position.y - _yVal);
+            // transform.position = targetPos;
         }
     }
 }
