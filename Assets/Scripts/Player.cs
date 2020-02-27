@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _speed; // movement speed
 
+    public int _health = 3;
+
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, _targetPos, _speed * Time.deltaTime);
