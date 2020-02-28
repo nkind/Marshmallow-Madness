@@ -11,6 +11,9 @@ public class Fireball : MonoBehaviour
 
     public GameObject _effect; // particle effect
 
+    public Animator _camAnim;
+
+
     void Update()
     {
         transform.Translate(Vector2.left * _speed * Time.deltaTime);
@@ -25,6 +28,8 @@ public class Fireball : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            _camAnim.SetTrigger("shake");
+            
             Instantiate(_effect, transform.position, Quaternion.identity); // Particle effect on collision 
 
             // player takes damage

@@ -135,3 +135,5 @@ MonoBehaviour:
   _damage: 1
   _speed: 5
   _effect: {fileID: 3780825888667456, guid: 9e64d08b73ee4054e91e296158c1d963, type: 3}
+  _camAnim: {fileID: 1533869793585059694, guid: 74e83bb7af2328240a405b1c29866ab8,
+    type: 3}
