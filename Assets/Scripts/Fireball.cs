@@ -7,8 +7,9 @@ public class Fireball : MonoBehaviour
 
     public int _damage = 1;
 
-    [SerializeField]
-    private float _speed;
+    [SerializeField] private float _speed;
+
+    public GameObject _effect; // particle effect
 
     void Update()
     {
@@ -24,6 +25,8 @@ public class Fireball : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Instantiate(_effect, transform.position, Quaternion.identity); // Particle effect on collision 
+
             // player takes damage
             other.GetComponent<Player>()._health -= _damage;
             Debug.Log(other.GetComponent<Player>()._health);
