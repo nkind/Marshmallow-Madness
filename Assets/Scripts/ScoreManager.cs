@@ -10,6 +10,8 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private Text _scoreDisplay;
 
+    public Player _player;
+
     void Update()
     {
         _scoreDisplay.text = _score.ToString();
@@ -18,8 +20,11 @@ public class ScoreManager : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            _score++;
-            Debug.Log(_score);
+            if (_player._health > 0)
+            {
+                _score++;
+                Debug.Log(_score);
+            }
         }
     }
 }
