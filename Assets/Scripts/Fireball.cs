@@ -34,7 +34,6 @@ public class Fireball : MonoBehaviour
 
             // player takes damage
             other.GetComponent<Player>()._health -= _damage;
-            Debug.Log(other.GetComponent<Player>()._health);
             Destroy(gameObject);
         }
     }

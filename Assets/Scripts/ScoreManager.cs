@@ -23,7 +23,6 @@ public class ScoreManager : MonoBehaviour
             if (_player._health > 0)
             {
                 _score++;
-                Debug.Log(_score);
             }
         }
     }
