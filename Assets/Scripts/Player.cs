@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -18,11 +19,19 @@ public class Player : MonoBehaviour
 
     public GameObject _effect;
 
+    [SerializeField] private Text _healthDisplay;
+
+    [SerializeField] private GameObject _gameOver;
+
     void Update()
     {
+
+        _healthDisplay.text = "HP: " + _health.ToString();
+
         if (_health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _gameOver.SetActive(true);
+            Destroy(gameObject);
         }
 
         transform.position = Vector2.MoveTowards(transform.position, _targetPos, _speed * Time.deltaTime);
