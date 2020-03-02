@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject _gameOver;
 
+    public GameObject _moveSound;
+
     void Update()
     {
 
@@ -38,11 +40,13 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y != _maxHeight)
         {
+            Instantiate(_moveSound, transform.position, Quaternion.identity);
             Instantiate(_effect, transform.position, Quaternion.identity);
             _targetPos = new Vector2(transform.position.x, transform.position.y + _yVal);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y != _minHeight)
         {
+            Instantiate(_moveSound, transform.position, Quaternion.identity);
             Instantiate(_effect, transform.position, Quaternion.identity);
             _targetPos = new Vector2(transform.position.x, transform.position.y - _yVal);
         }

@@ -11,7 +11,7 @@ public class Fireball : MonoBehaviour
 
     public GameObject _effect; // particle effect
 
-    public Animator _camAnim;
+    public GameObject _fireSound;
 
 
     void Update()
@@ -28,7 +28,7 @@ public class Fireball : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _camAnim.SetTrigger("shake");
+            Instantiate(_fireSound, transform.position, Quaternion.identity);
             
             Instantiate(_effect, transform.position, Quaternion.identity); // Particle effect on collision 
 

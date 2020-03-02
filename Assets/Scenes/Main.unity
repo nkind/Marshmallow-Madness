@@ -449,6 +449,8 @@ MonoBehaviour:
   _effect: {fileID: 8154585003723865247, guid: c810bce0d01fffa469ec61d7f42a41aa, type: 3}
   _healthDisplay: {fileID: 1929156421}
   _gameOver: {fileID: 2129159188}
+  _moveSound: {fileID: 6647745389424040399, guid: 094289f74cf314f44bda587285250803,
+    type: 3}
 --- !u!61 &209353899
 BoxCollider2D:
   m_ObjectHideFlags: 0
