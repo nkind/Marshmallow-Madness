@@ -44,5 +44,5 @@ Then select Build or Build And Run
 
 ## Author
 
-* **Nicholas Kindrachuk**
+* **Nicholas Kindrachuk** - njk361
 
